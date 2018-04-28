@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Test from '@/page/test'
+import ClockPage from '../page/clocks.page.vue'
 
 Vue.use(Router)
 
 export default new Router({
 	routes: [{
 		path: '/',
-		name: 'test',
-		component: Test
+		redirect: '/clock'
+	}, {
+		path: '/clock',
+		component: ClockPage,
 	}]
 })
