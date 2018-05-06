@@ -1,7 +1,7 @@
 <template>
 	<div id="tes_page">
 		<div>
-			<clock></clock>
+			<clock v-bind:border="border"></clock>
 		</div>
 	</div>
 </template>
@@ -9,7 +9,14 @@
 import Clock from '../components/clock.vue'
 export default {
 	data() {
-		return {}
+		return {
+			border: {},
+		}
+	},
+	created() {
+		this.border = {
+			color: '#988'
+		}
 	},
 	components: {
 		Clock,
