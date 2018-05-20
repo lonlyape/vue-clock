@@ -13,6 +13,7 @@ export default {
 			context: {},
 			timeAngle: {},
 			timeInterval: {},
+			transitionOption: {}
 		}
 	},
 	props: {
@@ -42,6 +43,16 @@ export default {
 					height: 300,
 					lineWidth: 2,
 					color: '#bbb'
+				}
+			}
+		},
+		//背景
+		background: {
+			type: Object,
+			default () {
+				return {
+					color: '',
+					image: ''
 				}
 			}
 		},
@@ -116,6 +127,11 @@ export default {
 				color: this.border.color || '#bbb',
 				lineWidth: this.border.lineWidth || 2,
 			};
+			//背景
+			var background = {
+				color: this.background.color || '',
+				image: this.background.image || ''
+			};
 			//刻度
 			var dial = {
 				isDial: this.dial.isDial || true, //是否要刻度
@@ -128,13 +144,13 @@ export default {
 			};
 			//时钟的数字
 			var number = {
-				isNumber: true, //是否要数字
-				type: 'arabic', //数字类型，罗马：“roman”；阿拉伯：“arabic”（默认）
-				color: '#777',
-				fontSize: '19px',
-				fontWeight: 'normal',
-				fontFamily: '微软雅黑',
-				radius: 125,
+				isNumber: this.number.isNumber || true, //是否要数字
+				type: this.number.type || 'arabic', //数字类型，罗马：“roman”；阿拉伯：“arabic”（默认）
+				color: this.number.color || '#777',
+				fontSize: this.number.fontSize || '19px',
+				fontWeight: this.number.fontWeight || 'normal',
+				fontFamily: this.number.fontFamily || '微软雅黑',
+				radius: this.number.radius || 125,
 			};
 			//针
 			var needle = {
@@ -160,6 +176,7 @@ export default {
 			return {
 				time,
 				border,
+				background,
 				dial,
 				number,
 				needle,
@@ -196,6 +213,7 @@ export default {
 		//画
 		draw() {
 			this.clear();
+			this.drawBackground();
 			this.drawBorder();
 			this.drawDial();
 			this.drawNumber();
@@ -240,11 +258,60 @@ export default {
 			this.context.stroke();
 			this.context.restore();
 		},
+		//背景图片
+		drawBackground() {
+			this.context.save();
+			this.context.beginPath();
+			this.context.translate(this.canvas.width / 2, this.canvas.height / 2);
+			var x, y;
+			if (this.drawOption.border.type == 'rectangle') {
+				this.context.rect(-this.drawOption.border.width / 2, -this.drawOption.border.height / 2, this.drawOption.border.width, this.drawOption.border.height);
+
+				x = -this.drawOption.border.width / 2;
+				y = -this.drawOption.border.height / 2;
+			} else {
+				this.context.arc(0, 0, this.drawOption.border.width / 2, 0, Math.PI * 2, true);
+				x = -this.drawOption.border.width / 2;
+				y = -this.drawOption.border.width / 2;
+			}
+			if (this.drawOption.background.color) {
+				this.context.fillStyle = this.drawOption.background.color;
+				this.context.fill();
+			}
+			if (this.drawOption.background.image) {
+				var image = new Image();
+
+				if (!this.transitionOption.bgImg) {
+					var _this = this;
+					image.src = this.drawOption.background.image;
+					image.onload = function() {
+						_this.$set(_this.transitionOption, 'bgImg', image);
+					}
+				} else {
+					image = this.transitionOption.bgImg;
+				}
+
+				var sx, sy, autow;
+				if (image.width >= image.height) {
+					sx = (image.width - image.height) / 2;
+					sy = 0;
+					autow = image.height;
+				} else {
+					sx = 0;
+					sy = (image.height - image.width) / 2;
+					autow = image.width;
+				}
+
+				this.context.clip();
+				this.context.drawImage(image, sx, sy, autow, autow, x, y, -x * 2, -y * 2);
+			}
+			this.context.closePath();
+			this.context.restore();
+		},
 		//画刻度
 		drawDial() {
 			if (!this.drawOption.dial.isDial) return;
 			var degMinute = Math.PI * 2 / 60;
-			// var degFiveMinut = degMinute * 5;
 			var degM = 0;
 			var distance = this.drawOption.dial.distance ? this.drawOption.dial.distance + this.drawOption.border.lineWidth / 2 : this.drawOption.border.lineWidth / 2;
 			if (this.drawOption.dial.distance == 0) distance = this.drawOption.border.lineWidth / 2;
