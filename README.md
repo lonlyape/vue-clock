@@ -24,4 +24,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 | 属性 | 类型 | 默认值 | 说明 |
 |-----|------|-------|------|
-| width ｜ `string` | auto | canvas 画布的宽度，默认为画布容器的宽度 |
+| width | `string` | auto | canvas 画布的宽度，默认为画布容器的宽度 |
