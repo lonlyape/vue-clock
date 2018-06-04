@@ -36,14 +36,16 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ### time
 
 | 属性 | 类型 | 默认值 | 说明 |
-| isStatic | 'Blean' | false | 是否为静止时间 |
-| timestamp | 'Number' | 0 | 时钟的时间，只有 isStatic 为 true 时才起作用 |
+|-----|------|-------|------|
+| isStatic | `Blean` | false | 是否为静止时间 |
+| timestamp | `Number` | 0 | 时钟的时间，只有 isStatic 为 true 时才起作用 |
 
 ### border
 
 | 属性 | 类型 | 默认值 | 说明 |
-| type | 'String' | circle | 边界类型（圆、四边形）;circle(圆形) 、 rectangle(四边形) |
-| width | 'Number' | 300 | 时钟的宽度或直径，如果 type==circle ，则为时钟的直径 |
-| height | 'Number' | 300 | 时钟的高度，只有 type==rectangle 明有效 |
-| lineWidth | 'Number' | 2 | 边界线的宽度（粗细） |
-| color | 'String' | #bbb | 边界线的宽度（粗细） |
+|-----|------|-------|------|
+| type | `String` | circle | 边界类型（圆、四边形）;circle(圆形) 、 rectangle(四边形) |
+| width | `Number` | 300 | 时钟的宽度或直径，如果 type==circle ，则为时钟的直径 |
+| height | `Number` | 300 | 时钟的高度，只有 type==rectangle 明有效 |
+| lineWidth | `Number` | 2 | 边界线的宽度（粗细） |
+| color | `String` | #bbb | 边界线的宽度（粗细） |
