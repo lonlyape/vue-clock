@@ -26,12 +26,12 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 |-----|------|-------|------|
 | width | `String` | auto | canvas 画布的宽度，默认为画布容器的宽度 |
 | height | `String` | auto | canvas 画布的高度，默认与画布的宽度一致 |
-| time | `Object` |  | 时间的配置，具体各个属性意义参考以下 |
-| border | `Object` |  | 边界的配置，具体各个属性意义参考以下 |
-| background | `Object` |  | 背景的配置，具体各个属性意义参考以下 |
-| dial | `Object` |  | 刻度的配置，具体各个属性意义参考以下 |
-| number | `Object` |  | 数字的配置，具体各个属性意义参考以下 |
-| needle | `Object` |  | 针的配置，具体各个属性意义参考以下 |
+| [time](#time-时间) | `Object` |  | 时间的配置，具体各个属性意义参考以下 |
+| [border](#border-边界) | `Object` |  | 边界的配置，具体各个属性意义参考以下 |
+| [background](#background-背景) | `Object` |  | 背景的配置，具体各个属性意义参考以下 |
+| [dial](#dial-刻度) | `Object` |  | 刻度的配置，具体各个属性意义参考以下 |
+| [number](#number-数字) | `Object` |  | 数字的配置，具体各个属性意义参考以下 |
+| [needle](#needle-针) | `Object` |  | 针的配置，具体各个属性意义参考以下 |
 
 ### time (时间)
 
