@@ -33,14 +33,14 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 | number | `Object` |  | 数字的配置，具体各个属性意义参考以下 |
 | needle | `Object` |  | 针的配置，具体各个属性意义参考以下 |
 
-### time
+### time (时间)
 
 | 属性 | 类型 | 默认值 | 说明 |
 |-----|------|-------|------|
 | isStatic | `Blean` | false | 是否为静止时间 |
 | timestamp | `Number` | 0 | 时钟的时间，只有 isStatic 为 true 时才起作用 |
 
-### border
+### border （边界）
 
 | 属性 | 类型 | 默认值 | 说明 |
 |-----|------|-------|------|
@@ -48,4 +48,54 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 | width | `Number` | 300 | 时钟的宽度或直径，如果 type==circle ，则为时钟的直径 |
 | height | `Number` | 300 | 时钟的高度，只有 type==rectangle 明有效 |
 | lineWidth | `Number` | 2 | 边界线的宽度（粗细） |
-| color | `String` | #bbb | 边界线的宽度（粗细） |
+| color | `String` | #bbb | 边界线的颜色 |
+
+### background （背景）
+
+| 属性 | 类型 | 默认值 | 说明 |
+|-----|------|-------|------|
+| color | `String` | 空 | 背景颜色 |
+| image | `String` | 空 | 背景图片 |
+
+### dial （刻度）
+
+| 属性 | 类型 | 默认值 | 说明 |
+|-----|------|-------|------|
+| isDial | `Blean` | true | 是否需要刻度 |
+| distance | `Number` | 0 | 刻度与边界的距离 |
+| maxLength | `Number` | 8 | 长刻度的长度（粗细） |
+| minLength | `Number` | 5 | 短刻度的长度（粗细） |
+| maxWidth | `Number` | 3 | 长刻度的宽度（粗细） |
+| minWidth | `Number` | 2 | 短刻度的宽度（粗细） |
+| color | `String` | #888 | 刻度的颜色 |
+
+### number （数字）
+
+| 属性 | 类型 | 默认值 | 说明 |
+|-----|------|-------|------|
+| isNumber | `Blean` | true | 是否需要数字 |
+| type | `String` | arabic | 数字类型，罗马：roman；阿拉伯：arabic |
+| color | `String` | #777 | 数字的颜色 |
+| fontSize | `String` | 19px | 字体的大小 |
+| fontWeight | `String` | normal | 字体的粗细 （与css中font-weight一致）|
+| fontFamily | `String` | 微软雅黑 | 字体 |
+| radius | `Number` | 125 | 数字圆的半径 |
+
+### needle （针）
+
+| 属性 | 类型 | 默认值 | 说明 |
+|-----|------|-------|------|
+| second | `Object` |  | 秒针 |
+| minute | `Object` |  | 分针 |
+| hour | `Object` |  | 时针 |
+
+在 needle 中，secone、minute、hour 分别为一个对象，每个对象中的属性名和代表的意义是一样的
+
+#### needle.*
+
+| 属性 | 类型 | 默认值 | 说明 |
+|-----|------|-------|------|
+| length | `Number` | second : 100 <br> minute : 110 <br> hour : 70 | 针的长度 |
+| lineWidth | `String` | second : 3 <br> minute : 4 <br> hour : 4 | 针的宽度（粗细） |
+| longOut | `Number` | second : 0 <br> minute : 0 <br> hour : 0 | 针的宽度（粗细） |
+| color | `String` | second : #aaa <br> minute : #999 <br> hour : #888 | 针的颜色 |
