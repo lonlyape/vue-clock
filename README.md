@@ -91,11 +91,11 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 在 needle 中，secone、minute、hour 分别为一个对象，每个对象中的属性名和代表的意义是一样的
 
-#### needle.*
+#### needle.second/needle.minute/needle.hour
 
 | 属性 | 类型 | 默认值 | 说明 |
 |-----|------|-------|------|
 | length | `Number` | second : 100 <br> minute : 110 <br> hour : 70 | 针的长度 |
 | lineWidth | `String` | second : 3 <br> minute : 4 <br> hour : 4 | 针的宽度（粗细） |
-| longOut | `Number` | second : 0 <br> minute : 0 <br> hour : 0 | 针的宽度（粗细） |
+| longOut | `Number` | second : 0 <br> minute : 0 <br> hour : 0 | 超出圆心的长度 |
 | color | `String` | second : #aaa <br> minute : #999 <br> hour : #888 | 针的颜色 |
