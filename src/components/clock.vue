@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-	name: 'clock',
+	name: 'vueClock',
 	data() {
 		return {
 			clockBoxStyle: {},
