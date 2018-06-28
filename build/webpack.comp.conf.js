@@ -22,6 +22,9 @@ const webpackConfig = merge(baseWebpackConfig, {
 	output: {
 		path: config.comp.assetsRoot,
 		filename: '[name].js',
+		library: 'vue-clock',
+		libraryTarget: 'umd',
+		umdNamedDefine: true
 	},
 	plugins: [
 		new UglifyJsPlugin({
