@@ -23,6 +23,10 @@ export default {
 		height: {
 			default: ''
 		},
+		//时区
+		timezone: {
+			default: ''
+		},
 		//时间
 		time: {
 			type: Object,
@@ -405,9 +409,27 @@ export default {
 
 			this.context.restore();
 		},
+		//以时区确定时间
+		selectTimezone() {
+			var d = this.drawOption.time.isStatic ? new Data(this.drawOption.time.timestamp) : new Date();
+			//得到1970年一月一日到现在的秒数
+			var len = d.getTime();
+			//确定时区
+			var timezone;
+			if (this.timezone === '') {
+				timezone = d.getTimezoneOffset() / 60;
+			} else {
+				timezone = Number(this.timezone);
+			}
+			//本地时间与GMT时间的时间偏移差
+			var offset = d.getTimezoneOffset() * 60000;
+			//得到现在的格林尼治时间
+			var utcTime = len + offset;
+			return new Date(utcTime + 3600000 * timezone);
+		},
 		//时间计算
 		newData() {
-			var nd = this.drawOption.time.isStatic ? new Data(this.drawOption.time.timestamp) : new Date()
+			var nd = this.selectTimezone();
 			var hour = nd.getHours();
 			var minute = nd.getMinutes();
 			var second = nd.getSeconds();
