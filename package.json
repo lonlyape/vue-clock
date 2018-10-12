@@ -2,8 +2,9 @@
     "name": "vue-clock",
     "version": "1.0.0",
     "description": "vue 的时钟组件",
-    "author": "符东伟 <798456988@qq.com>",
+    "author": "lonlyape <lonlyape@gmail.com>",
     "private": false,
+    "main": "dist/index.js",
     "scripts": {
         "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
         "start": "npm run dev",

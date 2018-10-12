@@ -6,7 +6,7 @@
 	</div>
 </template>
 <script>
-import Clock from '../components/clock.vue'
+import Clock from '../components/clock/clock.vue'
 export default {
 	data() {
 		return {
@@ -28,6 +28,7 @@ export default {
 <style scoped lang="less">
 #tes_page {
 	text-align: center;
+
 	>div {
 		width: 500px;
 		margin: 100px auto;

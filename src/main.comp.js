@@ -1,9 +1,19 @@
-import myClock from './components/clock.vue'
+import vueClock from './components/clock/'
 
-const clock = {
-	install(Vue, options) {
-		Vue.component(myClock.name, myClock)
-	}
+const components = [vueClock];
+
+const install = function(Vue, options) {
+	components.map(component => {
+		Vue.component(component.name, component);
+	})
 }
 
-export default clock;
+/* 支持使用标签的方式引入 */
+if (typeof window !== 'undefined' && window.Vue) {
+	install(window.Vue);
+}
+
+export default {
+	install,
+	vueClock
+};

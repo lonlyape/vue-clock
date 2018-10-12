@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import myClock from '../dist/index.js'
+
+Vue.use(myClock);
 
 Vue.config.productionTip = false
 

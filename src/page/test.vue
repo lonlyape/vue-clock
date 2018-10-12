@@ -1,14 +1,18 @@
 <template>
 	<div>
+		<vue-clock></vue-clock>
 		<my-clock></my-clock>
 	</div>
 </template>
 <script>
-import myClock from '../../dist/index.js'
+import vueClock from '../../dist/index.js'
 export default {
 	components: {
-		myClock,
-	}
+		myClock: vueClock.vueClock
+	},
+	created() {
+		console.log(vueClock);
+	},
 }
 
 </script>
