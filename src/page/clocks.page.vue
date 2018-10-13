@@ -1,7 +1,7 @@
 <template>
 	<div id="tes_page">
 		<div>
-			<clock v-bind:border="border" timezone="8"></clock>
+			<clock v-bind:border="border"></clock>
 		</div>
 	</div>
 </template>

@@ -417,7 +417,7 @@ export default {
 			//确定时区
 			var timezone;
 			if (this.timezone === '') {
-				timezone = d.getTimezoneOffset() / 60;
+				timezone = -d.getTimezoneOffset() / 60;
 			} else {
 				timezone = Number(this.timezone);
 			}

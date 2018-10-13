@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<vue-clock></vue-clock>
+		<vue-clock timezone="8"></vue-clock>
 		<my-clock></my-clock>
 	</div>
 </template>
