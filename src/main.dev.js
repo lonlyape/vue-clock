@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import myClock from '../dist/index.js'
+import { install } from '../dist/index.js'
 
-Vue.use(myClock);
+Vue.use(install);
 
 Vue.config.productionTip = false
 

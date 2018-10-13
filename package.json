@@ -1,5 +1,5 @@
 {
-    "name": "vue-clock",
+    "name": "vue-clock-lonlyape",
     "version": "1.0.0",
     "description": "vue 的时钟组件",
     "author": "lonlyape <lonlyape@gmail.com>",
@@ -11,6 +11,10 @@
         "lint": "eslint --ext .js,.vue src",
         "build-web": "node build/build.web.js",
         "build-comp": "node build/build.comp.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lonlyape/vue-clock.git"
     },
     "dependencies": {
         "less": "^3.0.2",
