@@ -9,13 +9,20 @@
 npm install -D vue-clock-lonlyape
 
 # main.js
+......
 import vueClock from 'vue-clock-lonlyape'
 Vue use(vueClock)
+......
 
 or
 # xxx.vue
+......
 import {vueClock} from 'vue-clock-lonlyape'
-
+......
+components:{
+	myClock:vueClock
+}
+......
 ```
 
 
