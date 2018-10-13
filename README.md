@@ -25,6 +25,8 @@ components:{
 ......
 ```
 
+## 例子
+[一个小展示](https://lonlyape.github.io/vue-clock/#/clock)
 
 # 参数
 
