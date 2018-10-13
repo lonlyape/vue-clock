@@ -5,7 +5,7 @@
 	</div>
 </template>
 <script>
-import { vueClock } from '../../dist/index.js'
+import { vueClock } from 'vue-clock-lonlyape'
 export default {
 	components: {
 		myClock: vueClock
