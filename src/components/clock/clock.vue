@@ -194,6 +194,7 @@ export default {
 					clearInterval(this.timeInterval);
 				}
 				this.draw();
+				console.log('option change');
 			},
 			deep: true,
 		},
@@ -289,6 +290,7 @@ export default {
 					var _this = this;
 					image.src = this.drawOption.background.image;
 					image.onload = function() {
+						console.log('img loaded');
 						_this.$set(_this.transitionOption, 'bgImg', image);
 					}
 				} else {
