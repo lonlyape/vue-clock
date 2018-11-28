@@ -162,19 +162,19 @@ export default {
 					length: (this.needle.second && this.needle.second.length) || 100,
 					color: (this.needle.second && this.needle.second.color) || '#aaa',
 					lineWidth: (this.needle.second && this.needle.second.lineWidth) || 3,
-					longOut: (this.needle.second && this.needle.second.longOut) || 0,
+					longOut: (this.needle.second && this.needle.second.longOut) || 5,
 				},
 				minute: {
 					length: (this.needle.minute && this.needle.minute.length) || 110,
 					color: (this.needle.minute && this.needle.minute.color) || '#999',
 					lineWidth: (this.needle.minute && this.needle.minute.lineWidth) || 4,
-					longOut: (this.needle.minute && this.needle.minute.longOut) || 0,
+					longOut: (this.needle.minute && this.needle.minute.longOut) || 5,
 				},
 				hour: {
 					length: (this.needle.hour && this.needle.hour.length) || 70,
 					color: (this.needle.hour && this.needle.hour.color) || '#888',
 					lineWidth: (this.needle.hour && this.needle.hour.lineWidth) || 4,
-					longOut: (this.needle.hour && this.needle.hour.longOut) || 0,
+					longOut: (this.needle.hour && this.needle.hour.longOut) || 5,
 				},
 			};
 			return {
