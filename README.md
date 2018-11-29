@@ -106,5 +106,5 @@ components:{
 |-----|------|-------|------|
 | length | `Number` | second : 100 <br> minute : 110 <br> hour : 70 | 针的长度 |
 | lineWidth | `String` | second : 3 <br> minute : 4 <br> hour : 4 | 针的宽度（粗细） |
-| longOut | `Number` | second : 0 <br> minute : 0 <br> hour : 0 | 超出圆心的长度 |
+| longOut | `Number` | second : 5 <br> minute : 5 <br> hour : 5 | 超出圆心的长度 |
 | color | `String` | second : #aaa <br> minute : #999 <br> hour : #888 | 针的颜色 |
