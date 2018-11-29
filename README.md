@@ -72,8 +72,8 @@ components:{
 |-----|------|-------|------|
 | isDial | `Blean` | true | 是否需要刻度 |
 | distance | `Number` | 0 | 刻度与边界的距离 |
-| maxLength | `Number` | 8 | 长刻度的长度（粗细） |
-| minLength | `Number` | 5 | 短刻度的长度（粗细） |
+| maxLength | `Number` | 8 | 长刻度的长度 |
+| minLength | `Number` | 5 | 短刻度的长度 |
 | maxWidth | `Number` | 3 | 长刻度的宽度（粗细） |
 | minWidth | `Number` | 2 | 短刻度的宽度（粗细） |
 | color | `String` | #888 | 刻度的颜色 |
