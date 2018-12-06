@@ -9,7 +9,7 @@
 				<span v-on:click="colorChange()">随机颜色</span>
 				<span v-on:click="colorReset()">重置颜色</span>
 			</div>
-			<clock v-bind:border="border" v-bind:background="background" v-bind:dial="dial" v-bind:number="number" v-bind:needle="needle"></clock>
+			<clock v-bind:border="border" v-bind:background="background" v-bind:dial="dial" v-bind:number="number" v-bind:needle="needle" ref="clock"></clock>
 		</div>
 	</div>
 </template>
@@ -30,7 +30,13 @@ export default {
 		this.border = {
 			type: 'circle',
 			color: '#ddd'
-		}
+		};
+		this.$nextTick(() => {
+			window.addEventListener('resize', () => {
+				this.$refs.clock.setClockBoxStyle();
+				this.$refs.clock.draw();
+			});
+		});
 	},
 	components: {
 		Clock,
@@ -74,7 +80,7 @@ export default {
 	text-align: center;
 
 	>div {
-		width: 500px;
+		max-width: 500px;
 		margin: 100px auto;
 		border: 1px solid #ccc;
 
