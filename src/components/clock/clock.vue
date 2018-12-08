@@ -8,7 +8,6 @@ export default {
 	name: 'vueClock',
 	data() {
 		return {
-			observer: null, //元素尺寸监听obj
 			clockBoxStyle: {},
 			canvas: {},
 			context: {},
