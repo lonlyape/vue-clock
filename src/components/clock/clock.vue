@@ -14,57 +14,23 @@ export default {
 			timeAngle: {},
 			timeInterval: {},
 			transitionOption: {},
-		}
-	},
-	props: {
-		width: {
-			default: ''
-		},
-		height: {
-			default: ''
-		},
-		//时区
-		timezone: {
-			default: ''
-		},
-		//时间
-		time: {
-			type: Object,
-			default () {
-				return {
+			defOption: {
+				time: {
 					isStatic: false,
-					timestamp: 0,
-				}
-			}
-		},
-		//边界
-		border: {
-			type: Object,
-			default () {
-				return {
+					timestamp: 0
+				},
+				border: {
 					type: 'circle', //边界类型（圆、四边形）;circle(圆形) 、 rectangle(四边形)
 					width: 300,
 					height: 300,
 					lineWidth: 2,
 					color: '#bbb'
-				}
-			}
-		},
-		//背景
-		background: {
-			type: Object,
-			default () {
-				return {
+				},
+				background: {
 					color: '',
 					image: ''
-				}
-			}
-		},
-		//刻度
-		dial: {
-			type: Object,
-			default () {
-				return {
+				},
+				dial: {
 					isDial: true, //是否要刻度
 					distance: 0, //刻度与边界的距离
 					maxLength: 8,
@@ -72,13 +38,8 @@ export default {
 					maxWidth: 3,
 					minWidth: 2,
 					color: '#888'
-				}
-			}
-		},
-		number: {
-			type: Object,
-			default () {
-				return {
+				},
+				number: {
 					isNumber: true, //是否要数字
 					type: 'arabic', //数字类型，罗马：“roman”；阿拉伯：“arabic”（默认）
 					color: '#777',
@@ -86,14 +47,8 @@ export default {
 					fontWeight: 'normal',
 					fontFamily: '微软雅黑',
 					radius: 125,
-				}
-			}
-		},
-		//针
-		needle: {
-			type: Object,
-			default () {
-				return {
+				},
+				needle: {
 					second: {
 						length: 100,
 						color: '#aaa',
@@ -111,70 +66,93 @@ export default {
 						color: '#888',
 						lineWidth: 4,
 						longOut: 5,
-					},
+					}
+				}
+			}
+		}
+	},
+	props: {
+		width: {
+			default: ''
+		},
+		height: {
+			default: ''
+		},
+		//自适应
+		adaptive: {
+			type: Boolean,
+			default: true
+		},
+		//时区
+		timezone: {
+			default: ''
+		},
+		//时间
+		time: {
+			type: Object
+		},
+		//边界
+		border: {
+			type: Object
+		},
+		//背景
+		background: {
+			type: Object
+		},
+		//刻度
+		dial: {
+			type: Object
+		},
+		//数字
+		number: {
+			type: Object
+		},
+		//针
+		needle: {
+			type: Object,
+			default () {
+				return {
+					second: {},
+					minute: {},
+					hour: {}
 				}
 			}
 		},
 	},
 	computed: {
 		drawOption() {
-			//时间
 			var time = {
-				isStatic: this.time.isStatic || false,
-				timestamp: this.time.isStatic,
+				...this.defOption.time,
+				...this.time
 			};
-			//边界
 			var border = {
-				type: this.border.type || 'circle',
-				width: this.border.width || 300,
-				height: this.border.height || this.border.width || 300,
-				color: this.border.color || '#bbb',
-				lineWidth: this.border.lineWidth || 2,
+				...this.defOption.border,
+				...this.border
 			};
-			//背景
 			var background = {
-				color: this.background.color || '',
-				image: this.background.image || ''
+				...this.defOption.background,
+				...this.background
 			};
-			//刻度
 			var dial = {
-				isDial: this.dial.isDial || true, //是否要刻度
-				distance: this.dial.distance || 0, //刻度与边界的距离
-				maxLength: this.dial.maxLength || 8,
-				minLength: this.dial.minLength || 5,
-				maxWidth: this.dial.maxWidth || 3,
-				minWidth: this.dial.minWidth || 2,
-				color: this.dial.color || '#888'
+				...this.defOption.dial,
+				...this.dial
 			};
-			//时钟的数字
 			var number = {
-				isNumber: this.number.isNumber || true, //是否要数字
-				type: this.number.type || 'arabic', //数字类型，罗马：“roman”；阿拉伯：“arabic”（默认）
-				color: this.number.color || '#777',
-				fontSize: this.number.fontSize || '19px',
-				fontWeight: this.number.fontWeight || 'normal',
-				fontFamily: this.number.fontFamily || '微软雅黑',
-				radius: this.number.radius || 125,
+				...this.defOption.number,
+				...this.number
 			};
-			//针
 			var needle = {
 				second: {
-					length: (this.needle.second && this.needle.second.length) || 100,
-					color: (this.needle.second && this.needle.second.color) || '#aaa',
-					lineWidth: (this.needle.second && this.needle.second.lineWidth) || 3,
-					longOut: (this.needle.second && this.needle.second.longOut) || 5,
+					...this.defOption.needle.second,
+					...this.needle.second
 				},
 				minute: {
-					length: (this.needle.minute && this.needle.minute.length) || 110,
-					color: (this.needle.minute && this.needle.minute.color) || '#999',
-					lineWidth: (this.needle.minute && this.needle.minute.lineWidth) || 4,
-					longOut: (this.needle.minute && this.needle.minute.longOut) || 5,
+					...this.defOption.needle.minute,
+					...this.needle.minute
 				},
 				hour: {
-					length: (this.needle.hour && this.needle.hour.length) || 70,
-					color: (this.needle.hour && this.needle.hour.color) || '#888',
-					lineWidth: (this.needle.hour && this.needle.hour.lineWidth) || 4,
-					longOut: (this.needle.hour && this.needle.hour.longOut) || 5,
+					...this.defOption.needle.hour,
+					...this.needle.hour
 				},
 			};
 			return {
@@ -194,7 +172,6 @@ export default {
 					clearInterval(this.timeInterval);
 				}
 				this.draw();
-				console.log('option change');
 			},
 			deep: true,
 		},
@@ -208,24 +185,56 @@ export default {
 			this.context = this.canvas.getContext('2d');
 			this.setClockBoxStyle();
 			this.newData();
-			if (!this.time.isStatic) {
+			if (!this.drawOption.time.isStatic) {
 				this.timeInterval = setInterval(this.newData, 1000);
 			}
+
 			this.draw();
-			console.log('nextTick');
-			var elObserver = new ResizeObserver((entries) => {
-				entries.forEach((entry) => {
-					this.setClockBoxStyle();
-					this.draw();
-				});
-			})
-			elObserver.observe(this.$el);
+			setTimeout(this.drawAsResize, 100);
 		});
 	},
 	methods: {
+		//resize
+		drawAsResize() {
+			var _this = this;
+			const oldOpthion = JSON.parse(JSON.stringify(this.drawOption));
+			const oldW = oldOpthion.border.width;
+			//监听元素的变化
+			var elObserver = new ResizeObserver((entries) => {
+				entries.forEach((entry) => {
+					let contentRect = entry.contentRect;
+					let option = _this.drawOption;
+					_this.setNumberValue(option, oldOpthion, contentRect.width - 6, oldW);
+					_this.setClockBoxStyle();
+					_this.draw();
+				});
+			})
+			elObserver.observe(this.$el);
+		},
+		//自适应参数设置
+		setNumberValue(obj, oldObj, newW, oldW) {
+			if (!this.adaptive) {
+				return;
+			}
+			for (let key in obj) {
+				let newVal = obj[key];
+				let oldVal = oldObj[key];
+				let magnification = newW / oldW < 1 ? newW / oldW : 1;
+				if (typeof newVal == 'number') {
+					obj[key] = oldVal * magnification;
+				} else if (typeof newVal == 'object') {
+					this.setNumberValue(newVal, oldVal, newW, oldW);
+				} else if (key == 'fontSize') {
+					obj[key] = oldVal.replace(/^\d*/, (num) => {
+						return num * magnification;
+					})
+				}
+			}
+		},
 		//画
 		draw() {
 			this.clear();
+			this.setNumberValue(this.drawOption, this.drawOption, this.canvas.width - 6, this.drawOption.border.width);
 			this.drawBackground();
 			this.drawBorder();
 			this.drawDial();
