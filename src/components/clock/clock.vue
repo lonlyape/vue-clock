@@ -1,5 +1,5 @@
 <template>
-	<div id="clock" v-bind:style="clockBoxStyle">
+	<div class="lonlyape_clock" v-bind:style="clockBoxStyle">
 		<canvas></canvas>
 	</div>
 </template>
@@ -13,7 +13,7 @@ export default {
 			context: {},
 			timeAngle: {},
 			timeInterval: {},
-			transitionOption: {}
+			transitionOption: {},
 		}
 	},
 	props: {
@@ -212,6 +212,14 @@ export default {
 				this.timeInterval = setInterval(this.newData, 1000);
 			}
 			this.draw();
+			console.log('nextTick');
+			var elObserver = new ResizeObserver((entries) => {
+				entries.forEach((entry) => {
+					this.setClockBoxStyle();
+					this.draw();
+				});
+			})
+			elObserver.observe(this.$el);
 		});
 	},
 	methods: {
@@ -463,8 +471,4 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-#clock {
-	width: 100%;
-}
-
 </style>

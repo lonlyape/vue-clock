@@ -31,12 +31,12 @@ export default {
 			type: 'circle',
 			color: '#ddd'
 		};
-		this.$nextTick(() => {
-			window.addEventListener('resize', () => {
-				this.$refs.clock.setClockBoxStyle();
-				this.$refs.clock.draw();
-			});
-		});
+		// this.$nextTick(() => {
+		// 	window.addEventListener('resize', () => {
+		// 		this.$refs.clock.setClockBoxStyle();
+		// 		this.$refs.clock.draw();
+		// 	});
+		// });
 	},
 	components: {
 		Clock,
