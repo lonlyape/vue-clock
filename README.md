@@ -35,6 +35,7 @@ components:{
 | width | `String` | auto | canvas 画布的宽度，默认为画布容器的宽度 |
 | height | `String` | auto | canvas 画布的高度，默认与画布的宽度一致 |
 | timezone | `Number` | 本地时区 | [时区](http://www.shijian.cc/shiqu/)，如时区为 UTC+8，则 timezone=8|
+| adaptive | `Boolean` | true | 自适应，如果容器小于时钟的设定大小，时钟根据容器的大小自行调整 |
 | [time](#time-时间) | `Object` |  | 时间的配置，具体各个属性意义参考以下 |
 | [border](#border-边界) | `Object` |  | 边界的配置，具体各个属性意义参考以下 |
 | [background](#background-背景) | `Object` |  | 背景的配置，具体各个属性意义参考以下 |
@@ -46,7 +47,7 @@ components:{
 
 | 属性 | 类型 | 默认值 | 说明 |
 |-----|------|-------|------|
-| isStatic | `Blean` | false | 是否为静止时间 |
+| isStatic | `Boolean` | false | 是否为静止时间 |
 | timestamp | `Number` | 0 | 时钟的时间，只有 isStatic 为 true 时才起作用 |
 
 ### border （边界）
@@ -70,7 +71,7 @@ components:{
 
 | 属性 | 类型 | 默认值 | 说明 |
 |-----|------|-------|------|
-| isDial | `Blean` | true | 是否需要刻度 |
+| isDial | `Boolean` | true | 是否需要刻度 |
 | distance | `Number` | 0 | 刻度与边界的距离 |
 | maxLength | `Number` | 8 | 长刻度的长度 |
 | minLength | `Number` | 5 | 短刻度的长度 |
@@ -82,7 +83,7 @@ components:{
 
 | 属性 | 类型 | 默认值 | 说明 |
 |-----|------|-------|------|
-| isNumber | `Blean` | true | 是否需要数字 |
+| isNumber | `Boolean` | true | 是否需要数字 |
 | type | `String` | arabic | 数字类型，罗马：roman；阿拉伯：arabic |
 | color | `String` | #777 | 数字的颜色 |
 | fontSize | `String` | 19px | 字体的大小 |
