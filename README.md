@@ -109,3 +109,11 @@ components:{
 | lineWidth | `String` | second : 3 <br> minute : 4 <br> hour : 4 | 针的宽度（粗细） |
 | longOut | `Number` | second : 5 <br> minute : 5 <br> hour : 5 | 超出圆心的长度 |
 | color | `String` | second : #aaa <br> minute : #999 <br> hour : #888 | 针的颜色 |
+
+
+
+# 更新日志
+
+### 1.1.0
+
+* 添加自适应功能，以参数 adaptive 控制，如果容器小于时钟设定的大小，时钟将根据容器的大小自行调整
