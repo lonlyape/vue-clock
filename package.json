@@ -1,7 +1,7 @@
 {
   "name": "vue-clock-lonlyape",
   "version": "1.1.0",
-  "description": "vue 的时钟组件",
+  "description": "a clock component for vue",
   "author": "lonlyape <lonlyape@gmail.com>",
   "private": false,
   "main": "dist/index.js",
@@ -16,9 +16,18 @@
     "type": "git",
     "url": "https://github.com/lonlyape/vue-clock.git"
   },
+  "keywords": [
+    "vue-clock-lonlyape",
+    "vue-clock",
+    "vueClock",
+    "clock"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lonlyape/vue-clock/issues"
+  },
+  "homepage": "https://github.com/lonlyape/vue-clock#readme",
   "dependencies": {
-    "less": "^3.0.2",
-    "less-loader": "^4.1.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
