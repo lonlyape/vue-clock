@@ -6,7 +6,7 @@
 
 ``` bash
 # install
-npm install -D vue-clock-lonlyape
+npm install -S vue-clock-lonlyape
 
 # main.js
 ......
