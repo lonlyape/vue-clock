@@ -461,6 +461,9 @@ export default {
 				hAngle
 			}
 
+			//时间事件
+			this.$emit('timeChange', nd);
+
 		},
 		//画线（公用）
 		line(starp, s, len, col, lw) {

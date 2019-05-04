@@ -9,7 +9,7 @@
 				<span v-on:click="colorChange()">随机颜色</span>
 				<span v-on:click="colorReset()">重置颜色</span>
 			</div>
-			<clock v-bind:border="border" v-bind:background="background" v-bind:dial="dial" v-bind:number="number" v-bind:needle="needle" ref="clock"></clock>
+			<clock v-bind:border="border" v-bind:background="background" v-bind:dial="dial" v-bind:number="number" v-bind:needle="needle" ref="clock" v-on:timeChange="timeChange"></clock>
 		</div>
 	</div>
 </template>
@@ -71,6 +71,9 @@ export default {
 		getColor() {
 			return 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
 		},
+		timeChange(date) {
+			// console.log(date);
+		}
 	},
 }
 

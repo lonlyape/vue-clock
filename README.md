@@ -1,4 +1,4 @@
-# vue-clock
+# vue-clock-lonlyape
 
 > vue 的时钟组件
 
@@ -110,6 +110,10 @@ components:{
 | longOut | `Number` | second : 5 <br> minute : 5 <br> hour : 5 | 超出圆心的长度 |
 | color | `String` | second : #aaa <br> minute : #999 <br> hour : #888 | 针的颜色 |
 
+# 事件
+
+| 事件名 | 说明 | 参数 |
+| timeChange | 一秒触发一次，当 time.isStatic 为 true 时，只触发一次 | 当前时间的 date 对象 |
 
 
 # 更新日志
