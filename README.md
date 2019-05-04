@@ -113,6 +113,7 @@ components:{
 # 事件
 
 | 事件名 | 说明 | 参数 |
+|-----|------|------|
 | timeChange | 一秒触发一次，当 time.isStatic 为 true 时，只触发一次 | 当前时间的 date 对象 |
 
 
