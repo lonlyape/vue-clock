@@ -430,7 +430,7 @@ export default {
 		},
 		//以时区确定时间
 		selectTimezone() {
-			var d = this.drawOption.time.isStatic ? new Data(this.drawOption.time.timestamp) : new Date();
+			var d = this.drawOption.time.isStatic ? new Date(this.drawOption.time.timestamp) : new Date();
 			//得到1970年一月一日到现在的秒数
 			var len = d.getTime();
 			//确定时区
