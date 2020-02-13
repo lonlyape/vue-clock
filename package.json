@@ -1,6 +1,6 @@
 {
   "name": "vue-clock-lonlyape",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "a clock component for vue",
   "author": "lonlyape <lonlyape@gmail.com>",
   "private": false,
