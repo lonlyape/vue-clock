@@ -1,6 +1,6 @@
 {
   "name": "vue-clock-lonlyape",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "a clock component for vue",
   "author": "lonlyape <lonlyape@gmail.com>",
   "private": false,
@@ -11,6 +11,9 @@
     "lint": "eslint --ext .js,.vue src",
     "build-web": "node build/build.web.js",
     "build-comp": "node build/build.comp.js"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/lonlyape"
   },
   "repository": {
     "type": "git",
