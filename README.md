@@ -1,6 +1,7 @@
 # vue-clock-lonlyape
 
 > vue 的时钟组件
+> [vue3 版本](https://github.com/lonlyape/vue-clock-v3)
 
 ## use
 
@@ -24,6 +25,8 @@ components:{
 }
 ......
 ```
+
+
 
 ## 例子
 [一个小展示](https://lonlyape.github.io/vue-clock/#/clock)
